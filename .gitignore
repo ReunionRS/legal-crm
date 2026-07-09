@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Builds
+client/dist/
+.firebase/
+client/android/.gradle/
+client/android/build/
+client/android/app/build/
+
+# Local environment
+.env
+server/.env
+client/.env
+client/android/local.properties
+
+# Firebase / service accounts
+*.firebase-adminsdk-*.json
+*firebase-adminsdk*.json
+
+# Mobile artifacts
+*.apk
+*.aab
+*.apks
+*.keystore
+*.jks
+
+# Logs / temp
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo

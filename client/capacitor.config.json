@@ -1,0 +1,8 @@
+{
+  "appId": "ru.cklumen.legalcrm",
+  "appName": "Юр CRM",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

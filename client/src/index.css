@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 247 249 251;
+  --surface: 247 249 251;
+  --surface-bright: 247 249 251;
+  --surface-container-lowest: 255 255 255;
+  --surface-container-low: 242 244 246;
+  --surface-container: 236 238 240;
+  --surface-container-high: 230 232 234;
+  --surface-container-highest: 224 227 229;
+  --surface-variant: 224 227 229;
+  --outline: 115 118 134;
+  --outline-variant: 195 198 215;
+  --primary: 0 74 198;
+  --primary-container: 37 99 235;
+  --primary-fixed: 219 225 255;
+  --secondary: 80 95 118;
+  --secondary-container: 208 225 251;
+  --tertiary: 148 55 0;
+  --tertiary-container: 188 72 0;
+  --tertiary-fixed: 255 219 205;
+  --on-surface: 25 28 30;
+  --on-surface-variant: 67 70 85;
+  --on-primary: 255 255 255;
+  --error: 186 26 26;
+  --error-container: 255 218 214;
+  color: rgb(var(--on-surface));
+  background: rgb(var(--background));
+  font-family: 'Inter', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark {
+  --background: 17 17 19;
+  --surface: 17 17 19;
+  --surface-bright: 22 22 25;
+  --surface-container-lowest: 28 28 31;
+  --surface-container-low: 34 34 38;
+  --surface-container: 42 42 47;
+  --surface-container-high: 52 52 58;
+  --surface-container-highest: 64 64 72;
+  --surface-variant: 70 70 79;
+  --outline: 160 160 170;
+  --outline-variant: 78 78 86;
+  --primary: 232 232 235;
+  --primary-container: 214 214 219;
+  --primary-fixed: 48 48 54;
+  --secondary: 176 176 184;
+  --secondary-container: 56 56 63;
+  --tertiary: 196 196 201;
+  --tertiary-container: 74 74 82;
+  --tertiary-fixed: 48 48 54;
+  --on-surface: 245 245 247;
+  --on-surface-variant: 194 194 201;
+  --on-primary: 20 20 23;
+  --error: 255 138 138;
+  --error-container: 76 37 37;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: rgb(var(--on-surface));
+  background:
+    radial-gradient(circle at top right, rgb(var(--secondary-container) / 0.3), transparent 26%),
+    linear-gradient(180deg, rgb(var(--surface-bright)) 0%, rgb(var(--background)) 28%, rgb(var(--surface-container-low)) 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.card-border {
+  border: 1px solid rgb(var(--outline-variant));
+}
+
+.card-panel {
+  @apply rounded-2xl bg-surface-container-lowest card-border shadow-soft;
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em];
+}
+
+.status-new {
+  @apply bg-primary/10 text-primary;
+}
+
+.status-progress {
+  @apply bg-orange-100 text-orange-700;
+}
+
+.status-closed {
+  @apply bg-emerald-100 text-emerald-700;
+}
+
+:root.dark .status-progress {
+  background: rgb(82 82 91 / 0.7);
+  color: rgb(245 245 247);
+}
+
+:root.dark .status-closed {
+  background: rgb(63 63 70 / 0.7);
+  color: rgb(245 245 247);
+}
+
+.field {
+  @apply w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 text-sm text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15;
+}
+
+.sidebar-link {
+  @apply relative flex items-center gap-3 overflow-hidden rounded-2xl px-4 py-2.5 text-sm font-medium text-on-surface-variant transition hover:bg-surface-container-high;
+}
+
+.sidebar-link.active {
+  @apply bg-secondary-container text-primary;
+  box-shadow: inset 4px 0 0 rgb(var(--primary));
+}
+
+.fade-up {
+  animation: fade-up 480ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
