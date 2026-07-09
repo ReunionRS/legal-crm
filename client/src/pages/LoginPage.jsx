@@ -42,22 +42,31 @@ export function LoginPage() {
 
         <section className="bg-white px-6 py-8 sm:px-10 sm:py-12" style={{ color: '#111111' }}>
           <div className="mb-8">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em]" style={{ color: '#111111' }}>Юр CRM</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight" style={{ color: '#111111' }}>Вход администратора</h2>
+            <p className="text-[12px] font-bold uppercase tracking-[0.2em]" style={{ color: '#111111' }}>
+              Юр CRM
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight" style={{ color: '#111111' }}>
+              Вход администратора
+            </h2>
             <p className="mt-2 text-sm" style={{ color: '#111111' }}>
               {isFirebaseConfigured
-                ? 'Используйте учетную запись администратора, созданную в Firebase Authentication.'
-                : 'Ключи Firebase пока не настроены, поэтому включен локальный резервный вход.'}
+                ? 'Используйте учётную запись администратора, созданную в Firebase Authentication.'
+                : 'Ключи Firebase пока не настроены, поэтому включён локальный резервный вход.'}
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <label className="block">
-              <span className="mb-2 block text-sm font-medium text-on-surface">Электронная почта</span>
+              <span className="mb-2 block text-sm font-medium" style={{ color: '#111111' }}>
+                Электронная почта
+              </span>
               <input value={email} onChange={(event) => setEmail(event.target.value)} className="field" type="email" />
             </label>
+
             <label className="block">
-              <span className="mb-2 block text-sm font-medium text-on-surface">Пароль</span>
+              <span className="mb-2 block text-sm font-medium" style={{ color: '#111111' }}>
+                Пароль
+              </span>
               <input
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
